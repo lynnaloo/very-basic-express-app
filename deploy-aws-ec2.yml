@@ -36,7 +36,7 @@ stages:
       displayName: 'Install Node.js'
 
     - script: |
-        python -m pip install --upgrade pip==9.0.3 setuptools wheel
+        python -m pip install
         pip install awscli
       displayName: 'Install AWS cli'
 
