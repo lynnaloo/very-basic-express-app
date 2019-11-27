@@ -50,5 +50,12 @@ stages:
         archiveFile: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
         replaceExistingArchive: true
 
-    - upload: $(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip
-      artifact: drop
+    - task: BeanstalkDeployApplication@1
+      inputs:
+        awsCredentials: 'AWS'
+        regionName: 'us-east-1'
+        applicationName: 'very-basic-express-app'
+        environmentName: 'VeryBasicExpressApp-env'
+        applicationType: 'aspnet'
+        webDeploymentArchive: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
+        description: 'Very basic Express.js web app'
