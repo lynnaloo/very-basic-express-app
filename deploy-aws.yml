@@ -54,7 +54,7 @@ stages:
       inputs:
         awsCredentials: 'AWS'
         regionName: 'us-east-1'
-        applicationName: 'Basic Express App'
+        applicationName: 'very-basic-express-app'
         environmentName: 'VeryBasicExpressApp-env'
         applicationType: 'aspnet'
         webDeploymentArchive: '$(Build.ArtifactStagingDirectory)/$(Build.BuildId).zip'
